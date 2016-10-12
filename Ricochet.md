@@ -1,5 +1,5 @@
 ## Ricochet
-By Alberto Passini, [Amanda Fernandes](https://github.com/amandafer/) and Tamiris Bastos
+By [Alberto Passini](https://github.com/AlbertoPassini), [Amanda Fernandes](https://github.com/amandafer/) and [Tamiris Bastos](https://github.com/tatasb)
 
 ![Ricochet Logo](images/ricochet.png)
 
