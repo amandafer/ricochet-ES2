@@ -17,7 +17,7 @@ To achieve true peer-to-peer connectivity, the hard work is done by a hidden ser
 The project was developed using C++ and Qt, a cross platform software. The interface was built with QML, a declarative UI language derived from javascript.
 In this chapter, the insights of the Ricochet project are given. We will give some background on the different stakeholders and architectural view and perspectives.
 
-##### Main Features
+#### Main Features
 Ricochet is an experimental kind of instant messaging that doesn't trust anyone with your identity, your contact list, or your communications.
 * You can chat without exposing your identity (or IP address) to anyone
 * Nobody can discover who your contacts are or when you talk (metadata-free)
@@ -41,7 +41,7 @@ In case the IM window is closed, the conversation history will be gone. When a c
 The settings window can be used to change the application configuration, besides managing contacts.
 
 
-##### Benefits and warnings
+#### Benefits and warnings
 Some of the benefits about the privacy provided by Ricochet:
 * Users are not personally identifiable, neither has IP addresses or physical locations revealed because of TOR.
 * Message content is cryptographically authenticated and private.
