@@ -127,20 +127,28 @@ The program has eight available versions until the present date, October 2016. T
 ![Ricochet Structure](images/releases.png)
 
 The additions and deletions of the numerous peaks, are shown in this figure. These peaks correspond to the releases of the Ricochet project. The numbered peaks are explained one by one below.
+
 1. **Torsion 1.0.0**:
 This was the very first version of the system and implements a “real-world” of a decentralized and anonymous messaging client for Tor. The last release was on 23 Mar 2014.
+
 2. **Torsion 1.0.1**:
 On the website they are grateful to some contributors like HostFat and we found the fixes and features of the program. Same examples are that the security was updated to OpenSSL 1.0.1g, was added an Italian translation, a static Linux build, became possible opened or copied an URL from the chat, the compatibility with older versions of OS X and the display of hidden service state was fixed. Became possible use the system on Linux, OS X and Windows.
+
 3. **Ricochet 1.0.2**:
 This was the first version of the program with the final name ricochet, and the name was suggested for the contributor `@obvio171`. The changes was minimal on this version and some examples of the changes was: some characters pass to be displayed on the correct way in the chat and wass added Spanish translation and some updates on the installations.
+
 4. **Ricochet 1.0.3**:
 On this version, we have an excellent improvement on the security with the new version of Tor, that prevent an anonymous attack on users of hidden services. Also, more translations was added like Danish and Brazilian Portuguese and some configurations was change to make the program more flexible, useful, robust and reliable.
+
 5. **Ricochet 1.0.4**:
 On this release we have only bugs corrections to fix some things that are commons or not on the system, for an example the error that appears when the program reboots unexpected (“Configuration is already in use”) and some addition in documentation and translations.
+
 6. **Ricochet 1.1.0**:
 The website resume this version saying that “This major release switches to a safer and more extensible protocol, adds a brand new icon and 11 new language translations, and includes many UI fixes as well as security updates for Tor and OpenSSL.” The most important information is that this version is not compatible with the olders versions and to continuous changing messages, every contact have to update theirs own version and this migration can be done through the system itself, in time to use it.
+
 7. **Ricochet 1.1.1**:
 This version includes bugs corrections, some updates and features like choose the language after the installation, see the number of unread messages and put the system to play sounds when receive messages.
+
 8. **Ricochet 1.1.2**:
 This is the latest version and we can consider that big improvements are made here, like in reliability and stability connections. This can be seen as now that contact users with suspicious names are blocked and it does not allow attempts to connect or disconnected users.
 
@@ -163,6 +171,9 @@ QML is a user interface markup language. It is a JSON-like declarative language 
 
 QML elements can also be seamlessly integrated and extended by C++ components using the Qt framework.
 
+#### OpenSSL
+
+#### Transifex
 
 
 ### Architecture
