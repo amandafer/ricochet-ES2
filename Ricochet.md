@@ -10,8 +10,18 @@ The concept of this IM is to message without any servers in the middle. Ricochet
 1. [Introduction](#introduction)
   1. [Main Features](#main_features)
   2. [Benefits and warnings](#benefits_warnings)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
+2. [Development Team and Contributions](#development)
+  1. [Stakeholders](#stakeholders)
+  2. [Competitors](#competitors)
+3. [Releases and Possibles Improvements](#releases)
+4. [Frameworks and Development Tools](#frameworks)
+  1. [TOR](#tor)
+  2. [Qt](#qt)
+  3. [OpenSSL](#openssl)
+  4. [Transifex](#transifex)
+5. [Architeture](#architecture)
+6. [Conclusion](#conclusion)
+7. [References](#references)
 
 ### Introduction <a name="introduction"></a>
 Created by John Brooks in 2010, Ricochet (previously Torsion) was a program for encrypted instant messaging that uses TOR hidden services for the protected transmission of communications. However, it only got users' attention in 2014, after Edward Snowden’s revelations about the government’s intrusive surveillance activities.
@@ -47,7 +57,7 @@ In the case that the IM window is closed, the conversation history will be gone.
 The "Settings" window can be used to change the application configuration, along with managing contacts.
 
 
-#### Benefits and Warnings
+#### Benefits and Warnings <a name="benefits_warnings"></a>
 Some of the benefits of the privacy provided by Ricochet:
 * Because of TOR, users are not personally identifiable; neither has IP addresses or physical locations revealed.
 * Message content is cryptographically authenticated and private.
@@ -68,10 +78,10 @@ Even though Ricochet presents a secure connection and cryptographed chat, the fo
 John Brooks, main creator of Ricochet, once made a statement about the risks of anonymity [7]:
 > “Ricochet is an experiment. Security and anonymity are difficult topics, and you should carefully evaluate your risks and exposure with any software.”
 
-### Development Team and Contributions
+### Development Team and Contributions <a name="development"></a>
 Most development and contributions are made through the GitHub platform. The open source project counts on numerous users that help with its growth. Below, the main contributors and competitors are identified [2].
 
-#### Stakeholders
+#### Stakeholders <a name="stakeholders"></a>
 * Development
   - John Brooks (@special) <john.brooks@dereferenced.net>
 
@@ -119,7 +129,7 @@ An overview of what has contributed to the creation of Ricochet is shown below:
 
 ![Ricochet Structure](images/ricochet_diagram.png)
 
-#### Competitors
+#### Competitors <a name="competitors"></a>
 Many online chats use end-to-end encrypted messages. However, only a few of them focus on a proper, secure way of maintaining anonymity. Ricochet is one of those projects that deals with the core problem of metadata, but there are also a few others to be considered.
 
 * **Tox:** this messenger is the main competitor of the application Ricochet. It is a peer-to-peer instant messaging and video calling protocol that offers end-to-end encryption.  Contrary to Ricochet, Tox relies on a *Distributed Hash Table* for peer discovery and has voice/video calls as a priority.
@@ -132,7 +142,7 @@ It is possible to analyse the comparisons between the applications with the imag
 
 **TODO put table**
 
-### Releases and Possibles Improvements
+### Releases and Possibles Improvements <a name="releases"></a>
 The program has eight available versions as of the present date (October 2016). The main and new features of each release will be discussed shortly in this section. In the next figure, the additions and deletions per week are shown. The gap between the old project and the beginning of what would become Ricochet represents the difficulty of retaining and gaining users prior to 2014. After that, between all releases, a lot of features were added, which is also reflected by the increased size of the project. **TODO reference figure**
 
 ![Ricochet Structure](images/releases.png)
@@ -168,33 +178,33 @@ This is the latest version and we can consider that big improvements are made he
 
 As we see, the design described is close to the simplest implementation possible. For future improvements, the protocol has the potential to be extended to enable features such as file transfer or even voice/video streaming. A more advanced use of hidden services could also be implemented and would mitigate the risks of publishing a publicly connectable service. Separate services or more elaborate designs could be used to prevent attacks by non-contacts. Also, future development in TOR could improve the cryptography and principles behind hidden services.
 
-### Used Frameworks and Development Tools
+### Frameworks and Development Tools <a name="frameworks"></a>
 The main tools used to make the Ricochet system are TOR, Qt, OpenSSL and Transifex. The backend system is primarily written in C++ and the interface in QML. In this section, we will discuss more each one of the used tools and their importance to the project.
 
-#### TOR
+#### TOR <a name="tor"></a>
 TOR uses Onion Router as an Internet networking protocol designed to anonymize the data relayed across it. The software makes it possible for users to hide their locations (and their IP addresses), as well as making it difficult for any snoops to see the user’s online activity.
 
 The Ricochet system uses TOR hidden services to create a connection between users. The TOR network runs through the computer servers of thousands of volunteers spread throughout the world. The data is bundled into an encrypted packet when it enters the network, and unlike normal internet connections, part of the packet's header is removed. The removed part, which contains the addressing information, can be used to gather information about the sender, hence why its removal is important. Finally, TOR encrypts the rest of the addressing information. The modified and encrypted data packet is then routed through many of these servers to its final destination.
 
 A hidden service needs to advertise its existence in the Tor network before clients will be able to contact it. Therefore the service randomly picks some relays, builds circuits to them, and asks them to act as *introduction points* by telling them its public key. By using a full TOR circuit, it is hard for anyone to associate an introduction point with the hidden server's IP address. While the introduction points are told the hidden service's identity (public key), we do not want them to learn about the hidden server's location (IP address).
 
-#### Qt
+#### Qt <a name="qt"></a>
 Qt is a cross-platform application development framework for desktop, embedded and mobile; it is written in C++ and used for creation of an application’s frontend. Qt is not a programming language on its own, therefore QML (Qt Meta Language) was used on Ricochet to design the user interface.
 
 QML is a user interface markup language. It is a JSON-like declarative language for designing user interface–centric applications. Inline JavaScript code handles imperative aspects. QML is mainly used for mobile applications where touch input, fluid animations and user experience are crucial. Elements of this language, shipped with Qt, are a sophisticated set of building blocks, graphical and behavioral. These elements can be combined to build components ranging in complexity from simple buttons and sliders to complete internet-enabled programs.
 
 QML elements can also be seamlessly integrated and extended by C++ components using the Qt framework.
 
-#### OpenSSL
+#### OpenSSL <a name="openssl"></a>
 
-#### Transifex
+#### Transifex <a name="transifex"></a>
 
 
-### Architecture
+### Architecture <a name="architecture"></a>
 
-### Conclusion
+### Conclusion <a name="conclusion"></a>
 
-### References
+### References <a name="references"></a>
 1. https://github.com/ricochet-im/ricochet
 2. https://www.torproject.org/docs/hidden-services.html.en
 3. https://yawnbox.com/index.php/category/ricochet/
