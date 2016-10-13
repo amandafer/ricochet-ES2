@@ -1,5 +1,6 @@
 ## Ricochet
-By [Alberto Passini](https://github.com/AlbertoPassini), [Amanda Fernandes](https://github.com/amandafer/) and [Tamiris Bastos](https://github.com/tatasb)
+**By [Alberto Passini](https://github.com/AlbertoPassini), [Amanda Fernandes](https://github.com/amandafer/) and [Tamiris Bastos](https://github.com/tatasb)**<br>
+*Federal University of Minas Gerais, 2016.*
 
 ![Ricochet Logo](images/ricochet.png)
 
@@ -7,21 +8,21 @@ By [Alberto Passini](https://github.com/AlbertoPassini), [Amanda Fernandes](http
 The concept of this IM is to message without any servers in the middle. Ricochet accomplishes this by not trusting your data to any third party software, whenever your messages are forward to your contacts.*
 
 ### Table of Contents
-1. [Introduction](#introduction)
-  1. [Main Features](#main_features)
-  2. [Benefits and warnings](#benefits_warnings)
-2. [Development Team and Contributions](#development)
-  1. [Stakeholders](#stakeholders)
-  2. [Competitors](#competitors)
-3. [Releases and Possibles Improvements](#releases)
-4. [Frameworks and Development Tools](#frameworks)
-  1. [TOR](#tor)
-  2. [Qt](#qt)
-  3. [OpenSSL](#openssl)
-  4. [Transifex](#transifex)
-5. [Architeture](#architecture)
-6. [Conclusion](#conclusion)
-7. [References](#references)
+1. [Introduction](#introduction-)
+  1. [Main Features](#main_features-)
+  2. [Benefits and warnings](#benefits_warnings-)
+2. [Development Team and Contributions](#development-)
+  1. [Stakeholders](#stakeholders-)
+  2. [Competitors](#competitors-)
+3. [Releases and Possibles Improvements](#releases-)
+4. [Frameworks and Development Tools](#frameworks-)
+  1. [TOR](#tor-)
+  2. [Qt](#qt-)
+  3. [OpenSSL](#openssl-)
+  4. [Transifex](#transifex-)
+5. [Architeture](#architecture-)
+6. [Conclusion](#conclusion-)
+7. [References](#references-)
 
 ### Introduction <a name="introduction"></a>
 Created by John Brooks in 2010, Ricochet (previously Torsion) was a program for encrypted instant messaging that uses TOR hidden services for the protected transmission of communications. However, it only got users' attention in 2014, after Edward Snowden’s revelations about the government’s intrusive surveillance activities.
@@ -143,7 +144,7 @@ It is possible to analyse the comparisons between the applications with the imag
 **TODO put table**
 
 ### Releases and Possibles Improvements <a name="releases"></a>
-The program has eight available versions as of the present date (October 2016). The main and new features of each release will be discussed shortly in this section. In the next figure, the additions and deletions per week are shown. The gap between the old project and the beginning of what would become Ricochet represents the difficulty of retaining and gaining users prior to 2014. After that, between all releases, a lot of features were added, which is also reflected by the increased size of the project. **TODO reference figure**
+The program has eight available versions as of the present date (October 2016). The main and new features of each release will be discussed shortly in this section. In the next figure [16], the additions and deletions per week are shown. The gap between the old project and the beginning of what would become Ricochet represents the difficulty of retaining and gaining users prior to 2014. After that, between all releases, a lot of features were added, which is also reflected by the increased size of the project.
 
 ![Ricochet Structure](images/releases.png)
 
