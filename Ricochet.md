@@ -232,8 +232,6 @@ While the protocol package has functions for the communication channel, the TOR 
 
 The core module has the classes and interfaces used to manage the local identification of the user and set up the properties of the users, of the conversation and of the list of contacts  while using the chat. It provides features to manage contacts: such as adding contacts, deleting contacts, sending messages, changing status, validating users and others capabilities. Besides that, it includes interfaces from the protocol module which take care of incoming requests (providing functions to set up the hostname, the contact ID, the nickname, the message and the active communication).
 
-These modules provide the interfaces necessary in order to make Ricochet chat work correctly. The next figure shows a tree of the interfaces' relationship.
-
 After the approach of each module and the interfaces, the way that the program works and the most important aspects of the architecture will be explored over the course of the following paragraphs.
 
 One of the problems that hidden services can solve is the ability to contact someone without anybody in the middle knowing who you are or who you are contacting. With a hidden service, to know where the traffic is coming from or going is much more difficult, since a user's traffic never exits the TOR network. Ricochet client hosts a hidden service because Ricochet ID is in actuallity an .onion address. Anyone possessing the address can contact the user. Ricochet also encrypts the contents of messages by default.
