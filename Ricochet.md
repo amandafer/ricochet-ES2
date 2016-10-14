@@ -161,23 +161,21 @@ The following additions were made: a static Linux build running without dependen
 
 3. **Ricochet 1.0.2**:
 This was the first version of the program with the final name Ricochet, which was suggested by the contributor `@obvio171`. The changes were minimal in this version, but some did occur: characters were displayed correctly in the chat, a Spanish translation was added and packages were updated.
-*************
-NOT REVISED
-4. **Ricochet 1.0.3**
-In this version, an excellent improvement on the security was achieved with the update of TOR. This new version prevented the anonymous attack on users of hidden services. Also, more translations was added like Danish and Brazilian Portuguese and the configuration was changed to make the program more flexible, useful, robust and reliable.
 
-5. **Ricochet 1.0.4**
-This release focused on bugs corrections to fix common errors in the system. To exemplify, a error where the program rebooted unexpectedly and the error “Configuration is already in use” would appear. As well as the previous versions, some additions in the documentation and translations were made.
+4. **Ricochet 1.0.3**:
+In this version, an excellent improvement on the security was achieved with the update of TOR. This new version prevented the anonymous attack on users of hidden services. Also, more translations were added like Danish and Brazilian Portuguese and the configuration was changed to make the program more flexible, useful, robust and reliable.
 
-6. **Ricochet 1.1.0**
-This as a major release switching the environment to a safer and more extensible protocol,  brand new icons were added and 11 new language translations included. It also includes many UI fixes, as well as security updates for TOR and OpenSSL. The most differential change made in this release was the incompatibility with the new version and older ones. This update forced users to migrate to the newer version in other to maintain their chats and contacts. The migration could be done through the system itself, in time to use it.
+5. **Ricochet 1.0.4**:
+This release focused on bug corrections to fix common errors in the system. As an example, the error “Configuration is already in use" would appear when the program rebooted unexpectedly. Along with the previous versions, some additions were made within the documentation and translations.
 
-7. **Ricochet 1.1.1**
-This version included bugs corrections, updates and features. Some new features were: choosing the language after the installation, be able to visualize the number of unread messages and the system to play sounds when messages were received.
+6. **Ricochet 1.1.0**:
+This was a major release, switching the environment to a safer and more extensible protocol, and adding brand new icons and including 11 new language translations. It also included many UI fixes, as well as security updates for TOR and OpenSSL. The most differential change made in this release was the incompatibility with the new version and older ones. This update forced users to migrate to the newer version in order to maintain their chats and contacts. The migration could be done through the system itself, in time to use it.
 
-8. **Ricochet 1.1.2**
-This is the latest version and it is possible to consider that big improvements are made. For instance, the reliability and stability of connections were improved. This can be proven, as now contact users with suspicious names are blocked and it does not allow attempts to connect or disconnected users.
-***************
+7. **Ricochet 1.1.1**:
+This version included bug corrections, updates and additional features. Some of the new features were: choosing the language after the installation, being able to visualize the number of unread messages and the systems ability to play sounds when messages were received.
+
+8. **Ricochet 1.1.2**:
+This is the latest version and it can clearly be seen that large improvements have been made. For instance, the reliability and stability of connections were refined. This can be proven, because now contact users with suspicious names are blocked and it does not allow attempts to connect or disconnect users.
 
 As we see, the design described is close to the simplest implementation possible. For future improvements, the protocol has the potential to be extended to enable features such as file transfer or even voice/video streaming. A more advanced use of hidden services could also be implemented and would mitigate the risks of publishing a publicly connectable service. Separate services or more elaborate designs could be used to prevent attacks by non-contacts. Also, future development in TOR could improve the cryptography and principles behind hidden services.
 
@@ -207,60 +205,63 @@ QML elements can also be seamlessly integrated and extended by C++ components us
 #### Transifex <a name="transifex"></a>
 Transifex is a proprietary, web-based translation platform. It is accessible from any browser and also a globalization management system (GMS). Prior to 2013, this was an open source project. However, that version was discontinued.
 
-This translation tool targets technical projects with frequently updated content, such as software, documentation and websites and encourages the automation of the localization workflow by integrating with the tools used by developers. Transifex has powerful tools to help the quality of the translations offered. An example is the option “Concordance Search”, it searches for a specific term and check how it was previously translated to ensure consistency, automating the process.
+This translation tool targets technical projects with frequently updated content, such as software, documentation and websites and encourages the automation of the localization workflow by integrating with the tools used by developers. Transifex has powerful tools to help the quality of the translations offered. An example is the option, “Concordance Search” which searches for a specific term and checks how it was previously translated to ensure consistency, automating the process.
 
-In Ricochet this tool is used to help the translators to add their collaborations into the project. With the help of this platform the developers can centralize their translations in only one place, which makes  it easier to locate apps and content from start to finish.
+In Ricochet this tool is used to help the translators to incorporate their collaborations into the project. With the help of this platform, the developers can centralize their translations in only one place, which makes it easier to locate apps and content from start to finish.
 
 ### Architecture <a name="architecture"></a>
-In this section, the architecture of Ricochet is going to be addressed. The source code is separated in modules that contains interfaces with the headers of the functions and classes needed for the right behavior of Ricochet. Below, the structure of the project is analyzed and also the way that the software works.
+In this section, the architecture of Ricochet is going to be addressed. The source code is separated into modules which contain interfaces with the headers of the functions and classes needed for the correct behavior of Ricochet. Below, the structure of the project and the way that the software works is analysed.
 
-In the Utils package, there are the classes and the interfaces for this classes that specify and set up  structures and functions to deal with the cryptography, manipulation of strings and configuration of permissions. Firstly, some of them deal with the generation and the manipulation of the secure key used for communication. Secondly, there are the ones that deal with the verification and the storage of the status of secure check operations (like if an operation has finished correctly, if an operation has finished with an error, if an operation has finished abruptly and if it has an error, the error message). Also, there are classes to manage configuration objects and files, that deal with the user's permissions and the accessibility. And finally, classes that deal with bugs and errors that may appear during the use. So, this module is for more general utilities, that are needed in the software.
+In the Utils package, inclosed are the classes and the interfaces for these classes which specify and set up  structures and functions to deal with the cryptography, manipulation of strings and configuration of permissions. Firstly, some of them deal with the generation and manipulation of the secure key used for communication. Secondly, there are the ones which deal with the verification and storage of the status of secure check operations. For instance, if an operation has finished correctly, if an operation has finished with an error, if an operation has finished abruptly or if it has an error, the error message appears. Also, there are classes to manage configuration objects and files, which deal with the user's permissions and accessibility. Finally, classes dealing with bugs and errors may appear during the use. Therefore, this module is for more general utilities needed in the software.
 
-Now, the UI (user interface) package is a module that specifies and determines the properties of the graphical user interface (GUI) of the software. It has files that define classes that deal with the presentation of graphical components like icons, buttons, labels, menus, lists and others. The models of the user interface, which are present in this module, contains the classes with functions, for example, to render the list of contacts, the options of languages and the chat presentation. The interface of this module that cover all of its functionalities, is the MainWindow.h. This one, includes all other classes that are needed to the chat interface. In other words, it contains the features to set up the main frame of Ricochet.
+The UI (user interface) package is a module that specifies and determines the properties of the graphical user interface (GUI) of the software. It has files that define classes which deal with the presentation of graphical components like icons, buttons, labels, menus, lists and others. The models of the user interface, which are present in this module, contain the classes with functions. Some examples are functions to render the list of contacts, to list options of languages and to preview chat presentation. The interface of this module that covers all of its functionalities is the `MainWindow.h`. This header includes all classes required by the chat interface. In other words, it contains the features to set up the main frame of Ricochet.
 
-The protocol package, has the files to configure a connection. Being more specific, it is responsible to set up the connection. It defines the process of establishing a communication channel, the parameters of the communication channel and the packages containing the messages exchanged between the users. Furthermore, this module, also determine how the request and the response are treated in the Ricochet chat. The protocol used for the communication, like it has already been said before, is the TCP.
+The protocol package has the files to configure a connection. More specifically, this package is responsible for setting up the connection. It defines the process of establishing a communication channel and its parameters, as well as the packages containing the messages exchanged between the users. Furthermore, this module also determines how the request and the response are treated in the Ricochet chat. The protocol used for the communication is TCP, as previously mentioned.
 
-While protocol package has the functions for the communication channel, the TOR package, deals with the communication through the TOR network. It sets up the properties of the socket and the properties of the authentication process. Moreover, the classes defined in this module are responsible for the management and the control of the process of trading encrypted messages, using sockets, through TOR network.
+While the protocol package has functions for the communication channel, the TOR package deals with the communication through the TOR network. It sets up the properties of the socket and the properties of the authentication process. Moreover, the classes defined in this module are responsible for the management and the control of the process of trading encrypted messages using sockets, through TOR network.
 
-The core module has the classes and the interfaces used to manage the local identification of the user and set up the properties of the users, of the conversation and of the list of contacts, while using the chat. It provides some features to add contacts, delete contacts, send messages, change status, validate users and others. Besides that, it includes interfaces from protocol module which take care of incoming requests (providing functions to set up the hostname, the contact ID, the nickname, the message and the active communication).
+The core module has the classes and interfaces used to manage the local identification of the user and set up the properties of the users, of the conversation and of the list of contacts  while using the chat. It provides features to manage contacts: such as adding contacts, deleting contacts, sending messages, changing status, validating users and others capabilities. Besides that, it includes interfaces from the protocol module which take care of incoming requests (providing functions to set up the hostname, the contact ID, the nickname, the message and the active communication).
 
-Those modules provide the interfaces needed to put Ricochet chat to work correctly. The next figure shows a tree of the interfaces relationship.
+These modules provide the interfaces necessary in order to make Ricochet chat work correctly. The next figure shows a tree of the interfaces' relationship.
 
-After the approach of each module and the interfaces, the way that the program works and the most important aspects of the architecture are going to be explored in the next lines.
-One of the problems that hidden services can solve is to contact someone without anybody in the middle knowing who you are or who you're contacting. With a hidden service, a user's traffic never leaves the TOR network, making it much harder for an attacker to see where traffic is going or coming from. Ricochet client hosts a hidden service, since Ricochet ID it is literally an .onion address. Anyone that posses the address can contact the user. Ricochet also encrypts the contents of messages by default.
+After the approach of each module and the interfaces, the way that the program works and the most important aspects of the architecture will be explored over the course of the following paragraphs.
 
-Ricochet does not communicate with central servers and neither does allow direct connections. Instead, each desktop client operates as a TOR hidden service and uses the TOR network to transmit encrypted and anonymous communication. The client generates a random 16-character public key or ID to authenticate the user and establish the channel for secure communication in a simple way that does not require users to install TOR separately. Generating the public key occurs with a single click, and the key is stored on the user’s machine, or any other device. In this way, the user can communicate with Ricochet from different machines.
+One of the problems that hidden services can solve is the ability to contact someone without anybody in the middle knowing who you are or who you are contacting. With a hidden service, to know where the traffic is coming from or going is much more difficult, since a user's traffic never exits the TOR network. Ricochet client hosts a hidden service because Ricochet ID is in actuallity an .onion address. Anyone possessing the address can contact the user. Ricochet also encrypts the contents of messages by default.
 
-To communicate with another Ricochet user, the client of the user making the request reaches out through the TOR network to arrange a rendezvous point. The client first connects anonymously via three hops to a TOR relay, which it is not aware of the origin of the connection. That relay searches for the other user’s Ricochet client ID and obtains a list of other TOR relays that can be used to reach out to the other party’s Ricochet client. It is important to highlight that the list of TOR relays changes every 24 hours. When the message reaches the other Ricochet client indicating a neutral relay for the rendezvous, the two clients meet there to exchange communication. However, at any time, there are at least six relays between the two users, three on each side.
+Ricochet does not communicate with central servers and neither does it allow direct connections. Instead, each desktop client operates as a TOR hidden service and uses the TOR network to transmit encrypted and anonymous communication. "The client generates a random 16-character public key or ID to authenticate the user and establish the channel for secure communication in a simple way that does not require users to install TOR separately. Generating the public key occurs with a single click, and the key is stored on the user’s machine, or any other device. In this way, the user can communicate with Ricochet from different machines."[13]
 
-The first relay is the only one that is aware of the user’s IP address, but it does not know the ID of your Ricochet client nor can match your IP address to that ID. It also does not know the Ricochet ID of the person the user is trying to contact. Those informations are only revealed to the relay three hops down the line from you, which peels off a layer of the TOR encryption to reveal the ID.
-For instance, if two users are communicating and someone is passively monitoring one or the other party, this will protect them. Unless someone is directly monitoring both users at the same time, it would be very hard to identify the communication.
-Ricochet does not require registration nor have an IM account anywhere. It does not need personal information of any kind. The generated Ricochet ID is sufficient for people to be identified and connect to start a communication. At the same time, Ricochet tries to maintain privacy by encrypting chat traffic and routing it through TOR.
+To communicate with another Ricochet user, the client of the user making the request reaches out through the TOR network to arrange a rendezvous point. The client first connects anonymously via three hops to a TOR relay, which is not aware of the origin of the connection. That relay searches for the other user’s Ricochet client ID and obtains a list of other TOR relays that can be used to reach out to the other party’s Ricochet client. It is important to highlight that the list of TOR relays changes every 24 hours. When the message reaches the other Ricochet client indicating a neutral relay for the rendezvous, the two clients meet there to exchange communication. However, at any given time, there are at least six relays between the two users, three on each side.
+
+The first relay is the only one that is aware of the user’s IP address, but it does not know the ID of your Ricochet client nor can it match the user's IP address to its ID. It also does not know the Ricochet ID of the person the user is trying to contact. That information is only revealed to the relay three hops down the line from the user, which peels off a layer of the TOR encryption, revealing the ID.
+For instance, two users communicating via TOR hidden services are protected in the case that someone is passively monitoring both or either party. Unless someone is directly monitoring both users at the same time, it would be considerably difficult to identify the communication.
+
+Ricochet does not require registration nor an IM account anywhere. It does not need personal information of any kind. The generated Ricochet ID is sufficient for people to be identified and connect to start a communication. At the same time, Ricochet tries to maintain privacy by encrypting chat traffic and routing it through TOR.
 
 The protocol has three layers:
-* **Connection:** that “describes the use of an anonymized TCP-style connection for peer-to-peer communication”;
+* **Connection:** "describes the use of an anonymized TCP-style connection for peer-to-peer communication."
 
-* **Packet:** makes possible do “multiplexing different operations on the same connection”.
+* **Packet:** makes it possible to do “multiplexing different operations on the same connection.”
 
-* **Channel:** this layer treats and analyse the packets according to your state and channel.
+* **Channel:** this layer treats and analyses the packets according to the user's state and channel.
 
+<br>
 The system is composed of template, components, modules and plugins where:
 
 * **Template:** controls how the system is presented to the user.
 
-* **Components:** basically are the main functional units of the system and can be seen as mini-applications.
+* **Components:** are simply the main functional units of the system and can be seen as mini-applications.
 
-* **Modules:** “usually contain information presented by components, but can also show static HTML code or plain text. An example of a commonly used module is” [8] the preferences module.
+* **Modules:** "usually contain information presented by components, but can also show static HTML code or plain text. An example of a commonly used module is" [8] the preferences module.
 
-* **Plugins:** provide the most basic of functions such as “add contacts” functionality.
+* **Plugins:** provide the most basic of functions such as the “add contacts” functionality.
 
 
 #### Components Diagram <a name="components"></a>
 
 #### Use Case Diagram <a name="use_case"></a>
-The Use Case Diagram is a useful way to represent what the final user can do with the system and it is also convenient to understand the behavior of the application while running. One of the most important part is that use cases diagram are easily understandable by both developers and customers, since the language is simple and objective.
+The Use Case Diagram is a useful way to represent what the final user can do with the system and it is also a convenient way to understand the behavior of the application while running. One of the most important parts is that use case diagrams are easily understandable by both developers and customers, since the language is simple and objective.
 
-Below we have examples and the explanations of the scenarios of the main functionalities. The steps below are considering a user on Windows OS and are shown in the order that the actions happen to the user.
+Below we have examples and explanations of the scenarios of the main functionalities. The steps below consider a user running Windows OS and are shown in the order that the actions happen to the user.
 
 | Scenario 1       |        |
 |------------------|--------|
@@ -277,8 +278,8 @@ Below we have examples and the explanations of the scenarios of the main functio
 | Scenario Name    | B - Configure the system |
 | Actor            | Users  |
 | Precondition     | Have the system installed |
-| Normal Flow      | 1. Open the system <br> 2. Choose the type of the connection - (free internet connection) |
-| Alternative Flow | 1. Open the system <br> 2. Choose the type of the connection - (censored internet connection) |
+| Normal Flow      | 1. Open the system <br> 2. Choose the type of the connection (free internet connection) |
+| Alternative Flow | 1. Open the system <br> 2. Choose the type of the connection (censored internet connection) |
 | Postcondition    | Start to use the program |
 
 
@@ -287,8 +288,8 @@ Below we have examples and the explanations of the scenarios of the main functio
 | Scenario Name    | C - Add contacts |
 | Actor            | Users  |
 | Precondition     | Have the system running |
-| Normal Flow      | 1. Click in the bottom “Add contacts” <br> 2. Write the ID of another user on the option “ID” <br> 3. Choose a nickname for this user and write on the option “Name” <br> 4. Write some message to this person to help her decide if she want to add you or not on the option “Message” <br> 5. Mark “Add” |
-| Alternative Flow | 1. Click in the bottom “Add contacts” <br> 2. Write the ID of another user on the option “ID” <br> 3. Choose a nickname for this user and write on the option “Name” - (optional step) <br> 4. Mark “Add” |
+| Normal Flow      | 1. Click at the bottom “Add contacts” <br> 2. Write the ID of another user in the “ID” field <br> 3. Choose a nickname for this user and write in the field “Name” <br> 4. Write some message to this person to help her decide if she wants to add you or not in the “Message” field <br> 5. Mark “Add” |
+| Alternative Flow | 1. Click at the bottom “Add contacts” <br> 2. Write the ID of another user in the field “ID” <br> 3. Choose a nickname for this user and write in the field “Name” (optional step) <br> 4. Mark “Add” |
 | Postcondition    | Start chatting |
 
 
@@ -297,15 +298,21 @@ Below we have examples and the explanations of the scenarios of the main functio
 | Scenario Name    | D - Exchange messages |
 | Actor            | Users  |
 | Precondition     | Have at least one contact in the system |
-| Normal Flow      | 1. Choose the user in your list that you want to talk <br> 2. Send messages <br> 3. Read messages |
-| Alternative Flow | 1. Accept some user <br> 2. Send messages <br> 3. Read messages |
+| Normal Flow      | 1. Choose the user in your list that you want to talk to <br> 2. Send messages <br> 3. Read messages |
+| Alternative Flow | 1. Accept a user <br> 2. Send messages <br> 3. Read messages |
 | Postcondition    |   -    |
 
-The final diagram is presented below, where it is possible to understand how system perform when it is operated by one or more users and their possible participation and actions.
+The actions of the users and a possibility to understand how the application works, is presented on the final diagram below.
+
 
 ![Use Case Diagram](images/use_case.png)
 
 ### Conclusion <a name="conclusion"></a>
+In this chapter, a Software Architecture perspective from Ricochet was extensively analysed. Ricochet is built and maintained by core staff member who perform diverse roles and are largely responsible for overseeing the whole project. Similar to many open source projects, the project relies heavily on external contributors: usually enthusiastic volunteers willing to help fix bugs, add features, and provide help in general.
+
+This chapter has also presented and overview of the functionalities and architecture of Ricochet application. In addition, the involvement of stakeholders and the analysis of the context of Ricochet have been discussed. The sponsors have a great significance to the project, hence the support and services provided by them. From the architecture point of view, Ricochet has great flexibility to add new features and keep them, but a couple improvements could be made to it. TALK ABOUT IMPROVEMENTS. However, the very nature of the Ricochet project encourages its continual development and evolution, which makes us believe that this outcomes will in fact be realised in the future.
+
+To conclude, Ricochet is an innovative instant messenger that delivers, with quality and simplicity, the possibility to chat anonymously. As examined and analysed throughout this review, the system is quite practical, making its use attractive to its final users. The idealizer and creator of the project, John Brooks, does not, however, hide his concerns about the project. The main difficulty of a system of this kind are potential vulnerabilities and the duty to preserve the security of the user’s data. As the project continually grows, more features can be expected to arise in upcoming releases. This open source project is an excellent choice for those who need complete anonymity or are worried about their metadata.
 
 ### References <a name="references"></a>
 1. Ricochet repository https://github.com/ricochet-im/ricochet/
