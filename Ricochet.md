@@ -21,8 +21,7 @@ The concept of this IM is to message without any servers in the middle. Ricochet
   3. [OpenSSL](#openssl-)
   4. [Transifex](#transifex-)
 5. [Architeture](#architecture-)
-  1. [Components Diagram](#components-)
-  2. [Use Case Diagram](#use_case-)
+  1. [Use Case Diagram](#use_case-)
 6. [Conclusion](#conclusion-)
 7. [References](#references-)
 
@@ -268,7 +267,6 @@ The system is composed of template, components, modules and plugins where:
 
 ![Ricochet Arch](images/ricochet_arch.png)
 
-#### Components Diagram <a name="components"></a>
 
 #### Use Case Diagram <a name="use_case"></a>
 The Use Case Diagram is a useful way to represent what the final user can do with the system and it is also a convenient way to understand the behavior of the application while running. One of the most important parts is that use case diagrams are easily understandable by both developers and customers, since the language is simple and objective.
