@@ -14,8 +14,8 @@ The concept of this IM is to message without any servers in the middle. Ricochet
 2. [Development Team and Contributions](#development-)
   1. [Stakeholders](#stakeholders-)
   2. [Competitors](#competitors-)
-3. [Releases and Possibles Improvements](#releases-)
-4. [Frameworks and Development Tools](#frameworks-)
+3. [Releases and Possibles Improvements](#releases)
+4. [Frameworks and Development Tools](#frameworks)
   1. [TOR](#tor-)
   2. [Qt](#qt-)
   3. [OpenSSL](#openssl-)
@@ -130,7 +130,7 @@ Most development and contributions are made through the GitHub platform. The ope
 
 An overview of what has contributed to the creation of Ricochet is shown below:
 
-![Ricochet Structure](images/ricochet_diagram.png)
+![Ricochet Diagram](images/ricochet_diagram.png)
 
 #### Competitors <a name="competitors"></a>
 Many online chats use end-to-end encrypted messages. However, only a few of them focus on a proper, secure way of maintaining anonymity. Ricochet is one of those projects that deals with the core problem of metadata, but there are also a few others to be considered.
@@ -143,7 +143,8 @@ Many online chats use end-to-end encrypted messages. However, only a few of them
 
 It is possible to analyse the comparisons between the applications with the image below. The complete version can be found on the website referenced by [5].
 
-**TODO put table**
+![Table1](images/table1.png)
+![Table2](images/table2.png)
 
 ### Releases and Possibles Improvements <a name="releases"></a>
 The program has eight available versions as of the present date (October 2016). The main and new features of each release will be discussed shortly in this section. In the next figure [15], the additions and deletions per week are shown. The gap between the old project and the beginning of what would become Ricochet represents the difficulty of retaining and gaining users prior to 2014. After that, between all releases, a lot of features were added, which is also reflected by the increased size of the project.
@@ -201,6 +202,16 @@ QML is a user interface markup language. It is a JSON-like declarative language 
 QML elements can also be seamlessly integrated and extended by C++ components using the Qt framework.
 
 #### OpenSSL <a name="openssl"></a>
+The OpenSSL is an open-source software library, written in C, that provides a robust and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. In other words, OpenSSL implements the TLS and the SSL protocols.
+
+This library offers many features to deal with cryptography and security. Lots of algorithms are implemented in OpenSSL and can be used for free. Between them, we have:
+* Ciphers algorithms with AES, Blowfish, Camellia, SEED, CAST-128, DES, IDEA, RC2, RC4, RC5, Triple DES and GOST 28147-89.
+
+* Cryptographic hash functions as MD5, MD4, MD2, SHA-1, SHA-2, RIPEMD-160, MDC-2, GOST R 34.11-94, BLAKE2.
+
+* Public-key cryptography algorithms like RSA, DSA, Diffie–Hellman key exchange, Elliptic curve, GOST R 34.10-2001.
+
+Being open source and providing this amount of different solutions for cryptography, makes the OpenSSL a good alternative for security.
 
 #### Transifex <a name="transifex"></a>
 Transifex is a proprietary, web-based translation platform. It is accessible from any browser and also a globalization management system (GMS). Prior to 2013, this was an open source project. However, that version was discontinued.
@@ -255,6 +266,7 @@ The system is composed of template, components, modules and plugins where:
 
 * **Plugins:** provide the most basic of functions such as the “add contacts” functionality.
 
+![Ricochet Arch](images/ricochet_arch.png)
 
 #### Components Diagram <a name="components"></a>
 
