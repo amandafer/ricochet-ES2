@@ -262,17 +262,17 @@ The Use Case Diagram is a useful way to represent what the final user can do wit
 
 Below we have examples and the explanations of the scenarios of the main functionalities. The steps below are considering a user on Windows OS and are shown in the order that the actions happen to the user.
 
-| Scenario 1       |
+| Scenario 1       |        |
 |------------------|--------|
 | Scenario Name    | A - Install the system |
 | Actor            | Users                  |
 | Precondition     | Have the necessary file |
 | Normal Flow      | 1. Execute the file .exe <br> 2. Choose  the normal installation <br> 3. Mark the option “Execute Ricochet” |
-| Alternative Flow | 1. Execute the file .exe <br> 2. Run it in a portable way|
-| Postcondition    | Open to configure and use the program|
+| Alternative Flow | 1. Execute the file .exe <br> 2. Run it in a portable way |
+| Postcondition    | Open to configure and use the program |
 
 
-| Scenario 2       |
+| Scenario 2       |        |
 |------------------|--------|
 | Scenario Name    | B - Configure the system |
 | Actor            | Users  |
@@ -282,7 +282,7 @@ Below we have examples and the explanations of the scenarios of the main functio
 | Postcondition    | Start to use the program |
 
 
-| Scenario 3       |
+| Scenario 3       |        |
 |------------------|--------|
 | Scenario Name    | C - Add contacts |
 | Actor            | Users  |
@@ -292,7 +292,7 @@ Below we have examples and the explanations of the scenarios of the main functio
 | Postcondition    | Start chatting |
 
 
-| Scenario 4       |
+| Scenario 4       |        |
 |------------------|--------|
 | Scenario Name    | D - Exchange messages |
 | Actor            | Users  |
