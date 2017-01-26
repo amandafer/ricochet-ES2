@@ -28,7 +28,9 @@ The concept of this IM is to message without any servers in the middle. Ricochet
 ### Introduction <a name="introduction"></a>
 Created by John Brooks in 2010, Ricochet (previously Torsion) was a program for encrypted instant messaging that uses TOR hidden services for the protected transmission of communications. However, it only got users' attention in 2014, after Edward Snowden’s revelations about the government’s intrusive surveillance activities.
 
-To achieve true peer-to-peer connectivity, the hard work is done by a hidden service architecture named TOR. The user’s Ricochet address (`ricochet:rs7ce36jsj24ogfw`) represents a public key and a hidden service, and through TOR peers can ask to connect to you. Both sides make an anonymous connection to a rendezvous relay, and messages are sent through that connection. The address identifies a public key, which encrypts all of that communication.
+Ricochet has a peer-to-peer connection (P2P), which is a model where both client and server request a service. To achieve true peer-to-peer connectivity, the hard work is done by a hidden service architecture named TOR. The user’s Ricochet address (`ricochet:rs7ce36jsj24ogfw`) represents a public key and a hidden service, and through TOR peers can ask to connect to you. Both sides make an anonymous connection to a rendezvous relay, and messages are sent through that connection. The address identifies a public key, which encrypts all of that communication.
+
+The basics concepts of cryptography are substantial to ensure a better understanding of this document. In computing, cryptography is applied as a padlock that is used to protect messages that people without the key should not be able to read. 
 
 The project was developed using C++ and Qt, a cross platform software. The interface was built with QML, a declarative UI language derived from javascript.
 
@@ -145,6 +147,8 @@ It is possible to analyse the comparisons between the applications with the imag
 ![Table1](images/table1.png)
 ![Table2](images/table2.png)
 
+Ricochet has faithful users as a result of it is accessibility, price, shareable, no predictability of discontinuity, focus on personal conversation without the distraction of group conversations and being extremely concerned about anonymity. Its creators are always in the midst of discussions on the subject of anonymity on the internet, which creates greater credibility to the software on the subject.
+
 ### Releases and Possibles Improvements <a name="releases"></a>
 The program has eight available versions as of the present date (October 2016). The main and new features of each release will be discussed shortly in this section. In the next figure [15], the additions and deletions per week are shown. The gap between the old project and the beginning of what would become Ricochet represents the difficulty of retaining and gaining users prior to 2014. After that, between all releases, a lot of features were added, which is also reflected by the increased size of the project.
 
@@ -183,7 +187,9 @@ As we see, the design described is close to the simplest implementation possible
 The main tools used to make the Ricochet system are TOR, Qt, OpenSSL and Transifex. The backend system is primarily written in C++ and the interface in QML. In this section, we will discuss more each one of the used tools and their importance to the project.
 
 #### TOR <a name="tor"></a>
-TOR uses Onion Router as an Internet networking protocol designed to anonymize the data relayed across it. The software makes it possible for users to hide their locations (and their IP addresses), as well as making it difficult for any snoops to see the user’s online activity.
+By definition, “Tor is a free software and an open network that helps you defend against traffic analysis, a form of network surveillance that threatens personal freedom and privacy, confidential business activities and relationships, and state security.” The keywords for TOR are privacy and security.
+
+TOR uses Onion Router which is “a technique for anonymous communication over a computer network. In an “onion network”, messages are encapsulated in layers of encryption, analogous to layers of an onion. The encrypted data is transmitted through a series of network nodes called onion routers, each of which "peels" away a single layer, uncovering the data's next destination. When the final layer is decrypted, the message arrives at its destination. The sender remains anonymous because each intermediary knows only the location of the immediately preceding and following nodes.” As an Internet networking protocol designed to anonymize the data relayed across it, the software makes it possible for users to hide their locations (and their IP addresses), as well as making it difficult for any snoops to see the user’s online activity.
 
 The Ricochet system uses TOR hidden services to create a connection between users. The TOR network runs through the computer servers of thousands of volunteers spread throughout the world. The data is bundled into an encrypted packet when it enters the network, and unlike normal internet connections, part of the packet's header is removed. The removed part, which contains the addressing information, can be used to gather information about the sender, hence why its removal is important. Finally, TOR encrypts the rest of the addressing information. The modified and encrypted data packet is then routed through many of these servers to its final destination.
 
@@ -193,7 +199,7 @@ The picture below exemplify the use of a working Transifex system[16]:
 
 ![TOR hidden service](images/tor.png)
 
-#### Qt <a name="qt"></a>
+#### QT <a name="qt"></a>
 Qt is a cross-platform application development framework for desktop, embedded and mobile; it is written in C++ and used for creation of an application’s frontend. Qt is not a programming language on its own, therefore QML (Qt Meta Language) was used on Ricochet to design the user interface.
 
 QML is a user interface markup language. It is a JSON-like declarative language for designing user interface–centric applications. Inline JavaScript code handles imperative aspects. QML is mainly used for mobile applications where touch input, fluid animations and user experience are crucial. Elements of this language, shipped with Qt, are a sophisticated set of building blocks, graphical and behavioral. These elements can be combined to build components ranging in complexity from simple buttons and sliders to complete internet-enabled programs.
@@ -201,7 +207,7 @@ QML is a user interface markup language. It is a JSON-like declarative language 
 QML elements can also be seamlessly integrated and extended by C++ components using the Qt framework.
 
 #### OpenSSL <a name="openssl"></a>
-The OpenSSL is an open-source software library, written in C, that provides a robust and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. In other words, OpenSSL implements the TLS and the SSL protocols.
+The OpenSSL is an open-source software library, written in C, that provides a robust and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. TLS (Transport Layer Security) and SSL (Secure Sockets Layer) are protocols that provide data encryption and authentication between applications and servers in scenarios where that data is being sent across an insecure network. In other words, OpenSSL implements the TLS and the SSL protocols. 
 
 This library offers many features to deal with cryptography and security. Lots of algorithms are implemented in OpenSSL and can be used for free. Between them, we have:
 * Ciphers algorithms with AES, Blowfish, Camellia, SEED, CAST-128, DES, IDEA, RC2, RC4, RC5, Triple DES and GOST 28147-89.
@@ -210,7 +216,7 @@ This library offers many features to deal with cryptography and security. Lots o
 
 * Public-key cryptography algorithms like RSA, DSA, Diffie–Hellman key exchange, Elliptic curve, GOST R 34.10-2001.
 
-Being open source and providing this amount of different solutions for cryptography, makes the OpenSSL a good alternative for security.
+Being open source and providing this amount of different solutions for cryptography, makes the OpenSSL a good alternative for security. Thus, Ricochet makes use of OpenSSL to secure the connection between its users.
 
 #### Transifex <a name="transifex"></a>
 Transifex is a proprietary, web-based translation platform. It is accessible from any browser and also a globalization management system (GMS). Prior to 2013, this was an open source project. However, that version was discontinued.
@@ -224,6 +230,46 @@ In this section, the architecture of Ricochet is going to be addressed. The sour
 
 In the Utils package, inclosed are the classes and the interfaces for these classes which specify and set up  structures and functions to deal with the cryptography, manipulation of strings and configuration of permissions. Firstly, some of them deal with the generation and manipulation of the secure key used for communication. Secondly, there are the ones which deal with the verification and storage of the status of secure check operations. For instance, if an operation has finished correctly, if an operation has finished with an error, if an operation has finished abruptly or if it has an error, the error message appears. Also, there are classes to manage configuration objects and files, which deal with the user's permissions and accessibility. Finally, classes dealing with bugs and errors may appear during the use. Therefore, this module is for more general utilities needed in the software.
 
+Below is an example of the method loadFromData from the class CryptoKey.cpp, which is from Utils package:
+```C++
+bool CryptoKey::loadFromData(const QByteArray &data, KeyType type, KeyFormat format)
+{
+    RSA *key = NULL;
+    clear();
+
+    if (data.isEmpty())
+        return false;
+
+    if (format == PEM) {
+        BIO *b = BIO_new_mem_buf((void*)data.constData(), -1);
+
+        if (type == PrivateKey)
+            key = PEM_read_bio_RSAPrivateKey(b, NULL, NULL, NULL);
+        else
+            key = PEM_read_bio_RSAPublicKey(b, NULL, NULL, NULL);
+
+        BIO_free(b);
+    } else if (format == DER) {
+        const uchar *dp = reinterpret_cast<const uchar*>(data.constData());
+
+        if (type == PrivateKey)
+            key = d2i_RSAPrivateKey(NULL, &dp, data.size());
+        else
+            key = d2i_RSAPublicKey(NULL, &dp, data.size());
+    } else {
+        Q_UNREACHABLE();
+    }
+
+    if (!key) {
+        qWarning() << "Failed to parse" << (type == PrivateKey ? "private" : "public") << "key from data";
+        return false;
+    }
+
+    d = new Data(key);
+    return true;
+}
+```
+
 The UI (user interface) package is a module that specifies and determines the properties of the graphical user interface (GUI) of the software. It has files that define classes which deal with the presentation of graphical components like icons, buttons, labels, menus, lists and others. The models of the user interface, which are present in this module, contain the classes with functions. Some examples are functions to render the list of contacts, to list options of languages and to preview chat presentation. The interface of this module that covers all of its functionalities is the `MainWindow.h`. This header includes all classes required by the chat interface. In other words, it contains the features to set up the main frame of Ricochet.
 
 The protocol package has the files to configure a connection. More specifically, this package is responsible for setting up the connection. It defines the process of establishing a communication channel and its parameters, as well as the packages containing the messages exchanged between the users. Furthermore, this module also determines how the request and the response are treated in the Ricochet chat. The protocol used for the communication is TCP, as previously mentioned.
@@ -231,6 +277,32 @@ The protocol package has the files to configure a connection. More specifically,
 While the protocol package has functions for the communication channel, the TOR package deals with the communication through the TOR network. It sets up the properties of the socket and the properties of the authentication process. Moreover, the classes defined in this module are responsible for the management and the control of the process of trading encrypted messages using sockets, through TOR network.
 
 The core module has the classes and interfaces used to manage the local identification of the user and set up the properties of the users, of the conversation and of the list of contacts  while using the chat. It provides features to manage contacts: such as adding contacts, deleting contacts, sending messages, changing status, validating users and others capabilities. Besides that, it includes interfaces from the protocol module which take care of incoming requests (providing functions to set up the hostname, the contact ID, the nickname, the message and the active communication).
+
+An example of a method from the Core package is shown below. This method was taken from the class ContactIDValidator and it is used to validate the ID of the contact of the user. 
+
+```C++
+QValidator::State ContactIDValidator::validate(QString &text, int &pos) const
+{
+    Q_UNUSED(pos);
+    fixup(text);
+    if (text.isEmpty())
+        return QValidator::Intermediate;
+
+    QValidator::State re = QRegularExpressionValidator::validate(text, pos);
+    if (re != QValidator::Acceptable) {
+        if (re == QValidator::Invalid)
+            emit failed();
+        return re;
+    }
+
+    if (matchingContact(text) || matchesIdentity(text)) {
+        emit failed();
+        return QValidator::Invalid;
+    }
+
+    return re;
+}
+```
 
 After the approach of each module and the interfaces, the way that the program works and the most important aspects of the architecture will be explored over the course of the following paragraphs.
 
@@ -342,3 +414,6 @@ To conclude, Ricochet is an innovative instant messenger that delivers, with qua
 14. Transifex website https://www.transifex.com/how-it-works/
 15. Graph and code frequency of Ricochet https://github.com/ricochet-im/ricochet/graphs/code-frequency
 16. Anonabox. *What is TOR*. https://www.anonabox.com/what-is-tor.html
+17. Goldschlag D., Reed M., Syverson P. (1999.) Onion Routing for Anonymous and Private Internet Connections, Onion Router.
+18. http://searchnetworking.techtarget.com/definition/peer-to-peer
+
